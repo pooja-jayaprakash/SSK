@@ -1,5 +1,5 @@
 SSK::Application.routes.draw do
-  resources :posts
+  resources :articles
 
 
   # The priority is based upon order of creation:
