@@ -1,7 +1,7 @@
 class UserController < ApplicationController
   def signin 
-    name = params[name]
-    password = params[password]
+    name = params[:name]
+    password = params[:password]
     user = User.signin(name,password)
     if user != nil 
       session[:user_id] = user.id
