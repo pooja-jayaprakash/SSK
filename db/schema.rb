@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140819152940) do
-
-  create_table "articles", :force => true do |t|
-    t.text     "e_text"
-    t.text     "o_text"
-    t.text     "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20140819160646) do
 
   create_table "messages", :force => true do |t|
     t.text     "o_text"
