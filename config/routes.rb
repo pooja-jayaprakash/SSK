@@ -1,5 +1,9 @@
 SSK::Application.routes.draw do
   #get "app/loader"
+  
+  match "user" => "user#signIn", via: :post
+  match "search/:term" => "message#searchMessage", via: :get
+   
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

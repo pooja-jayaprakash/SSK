@@ -2,7 +2,7 @@ class SSK.Routers.AppsRouter extends Backbone.Router
   initialize: (options) ->
 
   routes:
-    "*.*"     : "signin"
+    ".*"     : "signin"
     "signup"  : "signup"
     "message" : "message"
     "list"    : "list"

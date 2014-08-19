@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   
   def self.signIn(name,password)
     user = User.find_by_name(name)
-    if user && user.password == hashedPassword(password, salt) 
+    if user && user.password == hashedPassword(password, user.salt) 
       return user
     else 
       return nil
