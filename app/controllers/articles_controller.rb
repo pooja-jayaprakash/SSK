@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.createarticle(params[:article][:o_text],session[:user_id],session[:salt])
 
     respond_to do |format|
       format.html # index.html.erb
