@@ -31,11 +31,7 @@ class ArticlesController < ApplicationController
       format.json { render json: @article }
     end
   end
-  def self.searcharticle(search_text,salt)
-    query = BCrypt::Engine.hash_secret(search_text,salt)
-    result = article.where('e_text like ?',query)
-    return result 
-  end
+  
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
