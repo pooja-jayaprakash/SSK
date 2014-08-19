@@ -3,17 +3,22 @@ SSK.Views.Apps ||= {}
 class SSK.Views.Apps.SearchView extends Backbone.View
   template: JST["backbone/templates/apps/search"]
 
+  events:
+    "click #search_submit_btn"  : "searchMessages"
+
   constructor: (options) ->
     super(options)
     @message = new SSK.Models.Message()
+    @messages = new SSK.Collections.MessagesCollection()
     
-  sendMessage: (e) ->
-    message = $("#message").val()
-    @message.get(
-      url: "message/list"
+  searchMessages: () ->
+    query = $("#query").val()
+    @$("#search_message_container").html("")
+    @messages.fetch(
+      url: "message/search/" + query
       success: (model, resp) =>
-        @message.forEach((message) =>
-          @$(".message_container").append("<div class=\"message_item\"><div class=\"message_sender\">" + message.user_id + "</div><div class=\"message_otext\">" + message.o_text + "</div><div class=\"message_etext\">" + message.e_text + "</div></div>")
+        @messages.forEach((message) =>
+          @$("#search_message_container").append("<div class=\"message_item\"><div class=\"message_sender\">user_id: " + message.attributes.user_id + "</div><div class=\"message_otext\">o_text: " + message.attributes.o_text + "</div><div class=\"message_etext\">e_text: " + message.attributes.e_text + "</div></div>***********")
         )
     )
     

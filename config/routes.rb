@@ -2,7 +2,7 @@ SSK::Application.routes.draw do
   #get "app/loader"
   
   match "user" => "user#signIn", via: :post
-  match "search/:term" => "message#searchMessage", via: :get
+  match "message/search/:query" => "message#search", via: :get
   match "message" => "message#createMessage", via: :post
   match "message/list" => "message#list", via: :get
    

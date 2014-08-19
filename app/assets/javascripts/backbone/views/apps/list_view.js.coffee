@@ -9,7 +9,6 @@ class SSK.Views.Apps.ListView extends Backbone.View
     @messages = new SSK.Collections.MessagesCollection()
     
   listMessages: () ->
-    message = $("#message").val()
     @messages.fetch(
       url: "message/list"
       success: (model, resp) =>
