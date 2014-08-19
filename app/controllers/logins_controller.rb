@@ -34,7 +34,15 @@ class LoginsController < ApplicationController
 
   # GET /logins/1/edit
   def edit
-    @login = Login.find(params[:id])
+   @login = Login.signin(params[:name],params[:password])
+   name = params[:name]
+    password = params[:password]
+    user = Login.signin(name,password)
+    if user != nil 
+      session[:user_id] = user.id
+      session[:salt] = user.salt
+      session[:name] = user.name
+    end
   end
 
   # POST /logins
