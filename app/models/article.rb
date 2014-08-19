@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
     message.user_id = user_id 
     message.save
   end
-  def self.searcharticle(search_text,salt)
+  def self.searchArticle(search_text,salt)
     query = BCrypt::Engine.hash_secret(search_text,salt)
     result = article.where('e_text like ?',query)
     return result 
