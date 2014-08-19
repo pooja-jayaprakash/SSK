@@ -3,6 +3,8 @@ SSK::Application.routes.draw do
   
   match "user" => "user#signIn", via: :post
   match "search/:term" => "message#searchMessage", via: :get
+  match "message" => "message#createMessage", via: :post
+  match "message/list" => "message#list", via: :get
    
 
   # The priority is based upon order of creation:

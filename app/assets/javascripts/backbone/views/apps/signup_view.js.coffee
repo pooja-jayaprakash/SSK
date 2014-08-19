@@ -15,7 +15,7 @@ class SSK.Views.Apps.SignupView extends Backbone.View
     password =  $("#password").val() 
     @user.save({name: name, password: password, type: "signup"},
       success: (model, resp) =>
-        router.navigate("search", {trigger: true})
+        router.navigate("message", {trigger: true})
     )
     
   render: ->
