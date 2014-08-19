@@ -1,4 +1,7 @@
 SSK::Application.routes.draw do
+  resources :logins
+
+
   resources :articles
 
 
