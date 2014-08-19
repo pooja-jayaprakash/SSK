@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.searchArticle(params[:search_text])
-    redirect_to action :results
+    redirect_to action: :result
   end
 
   # POST /articles
